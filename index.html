@@ -1,0 +1,360 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zylo - Home</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+<header>
+  <div class="brand" aria-label="Zylo brand">
+    <div class="pill">Zylo</div>
+    <div class="logo-circle" aria-hidden="true">zylo</div>
+  </div>
+
+  <nav aria-label="Primary">
+    <ul>
+      <li><a href="#home" data-nav>Home</a></li>
+      <li><a href="#impact" data-nav>Impact</a></li>
+      <li><a href="#timeline" data-nav>Timeline</a></li>
+      <li><a href="#stories" data-nav>Stories</a></li>
+      <li><a href="#about" data-nav>About Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="home" aria-label="Zylo hero">
+    <div class="hero-content">
+      <h1 class="title">Zylo is...</h1>
+      <p class="hero-sub">
+        A digital safe space where climate awareness, action, and storytelling meet.
+      </p>
+
+      <div class="hero-cta" role="group" aria-label="Primary actions">
+        <a class="btn primary" href="#stories">Read Stories </a>
+        <button class="btn" type="button" id="openStoryModal">Share Your Story</button>
+      </div>
+    </div>
+
+    <a class="hex left hex-link" href="#stories" data-story="story-1" aria-label="Go to Stories: Climate change difference story">
+      <div class="hex-inner">A Difference<br>In Climate Change</div>
+    </a>
+
+    <a class="hex right hex-link" href="#stories" data-story="story-2" aria-label="Go to Stories: Safe space for voices story">
+      <div class="hex-inner">A Safe Space<br>For Climate Voices</div>
+    </a>
+
+    <a class="hex bottom hex-link" href="#stories" data-story="story-3" aria-label="Go to Stories: Real environmental impact story">
+      <div class="hex-inner">A Real Environmental Impact</div>
+    </a>
+
+    <div class="mist" aria-hidden="true"></div>
+  </section>
+
+  <!-- IMPACT -->
+  <section id="impact" aria-label="Impact">
+    <div class="section-wrap">
+      <h2>Impact</h2>
+      <p class="section-sub">
+        We turn climate awareness into small actions and track our progress together.
+      </p>
+
+      <div class="impact-grid">
+        <div class="impact-card">
+          <h3 style="font-size:1.15rem;color:#fefce8;letter-spacing:.2px;">This Week’s Action</h3>
+          <p class="small-note">
+            <!-- PLACEHOLDER -->
+          </p>
+
+          <div class="impact-actions">
+            <div class="action-row">
+              <div>
+                <strong>2-Minute Energy Check</strong>
+                <div class="small-note" style="margin-top:6px;">
+                  Turn off unused lights and chargers for one evening. Notice what changes and what doesn’t.
+                </div>
+              </div>
+              <span class="badge">Easy</span>
+            </div>
+
+            <div class="action-row">
+              <div>
+                <strong>Nice Water Habit</strong>
+                <div class="small-note" style="margin-top:6px;">
+                  Shorten your shower by 2 minutes and turn off the tap while brushing.
+                </div>
+              </div>
+              <span class="badge">Quick Win</span>
+            </div>
+
+            <div class="action-row">
+              <div>
+                <strong>Neighborhood Observation</strong>
+                <div class="small-note" style="margin-top:6px;">
+                  Take a 10-minute walk and write down one change you notice (heat, plants, runoff, trash, wildlife).
+                </div>
+              </div>
+              <span class="badge">Doing Good</span>
+            </div>
+          </div>
+
+          <div class="local-spotlight">
+            <h3>Local Spotlight</h3>
+            <p>
+              Highlight a place you care about (a street, park, school, or creek).
+            </p>
+          </div>
+        </div>
+
+        <div class="impact-card">
+          <h3 style="font-size:1.15rem;color:#fefce8;letter-spacing:.2px;">Community Progress</h3>
+          <p class="small-note">
+            <!-- PLACEHOLDER -->
+            </p>
+          <div class="stats" aria-label="Impact counters">
+            <div class="stat">
+              <div class="num" data-counter="stories">0</div>
+              <div class="label">Stories Shared</div>
+            </div>
+            <div class="stat">
+              <div class="num" data-counter="actions">0</div>
+              <div class="label">Actions Completed</div>
+            </div>
+            <div class="stat">
+              <div class="num" data-counter="hours">0</div>
+              <div class="label">Volunteer Hours</div>
+            </div>
+          </div>
+
+          <div class="small-note">
+            <!-- PLACEHOLDER -->
+          </div>
+
+          <div class="stories-cta">
+            <a class="btn primary" href="#stories">Explore Stories</a>
+            <button class="btn" type="button" id="openStoryModal2">Share an Observation</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline" aria-label="Zylo Origins">
+    <div class="section-wrap">
+      <h2>Zylo Origins</h2>
+      <p class="timeline-intro">
+        Zylo started as a simple idea: make climate change feel personal, not huge.
+        Click each milestone to see how we grew.
+      </p>
+
+      <div class="origin-timeline">
+        <details class="origin-item" open>
+          <summary>
+            <span class="origin-date">The Spark</span>
+            <span class="origin-title">A moment that didn’t feel “normal”</span>
+            <span class="origin-chip">Click to expand</span>
+          </summary>
+          <div class="origin-body">
+            It began with noticing small changes - hotter days, heavier rain, and nature feeling less predictable.
+            Zylo formed around one question: <strong>What if climate change could start with stories people can actually relate to?</strong>
+          </div>
+        </details>
+
+        <details class="origin-item">
+          <summary>
+            <span class="origin-date">The First Draft</span>
+            <span class="origin-title">A “safe space” concept takes shape</span>
+            <span class="origin-chip">Click to expand</span>
+          </summary>
+          <div class="origin-body">
+            The early plan wasn’t about doom-scrolling. It was about clarity:
+            <ul>
+              <li>Short stories instead of long reports</li>
+              <li>Local observations instead of global changes</li>
+              <li>Small actions that are realistic for people</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="origin-item">
+          <summary>
+            <span class="origin-date">The Name</span>
+            <span class="origin-title">“Zylo” becomes the identity</span>
+            <span class="origin-chip">Click to expand</span>
+          </summary>
+          <div class="origin-body">
+            Zylo became the brand: simple, memorable, and modern. The goal was a place that feels
+            <strong>welcoming, hopeful, and action-oriented,</strong>not just another climate group.
+          </div>
+        </details>
+
+        <details class="origin-item">
+          <summary>
+            <span class="origin-date">Now</span>
+            <span class="origin-title">From awareness to real-world action</span>
+            <span class="origin-chip">Click to expand</span>
+          </summary>
+          <div class="origin-body">
+            Zylo’s next step is turning stories into outcomes:
+            tracking observations, sharing projects, and showing impact one step at a time.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORIES -->
+  <section id="stories" aria-label="Stories">
+    <div class="section-wrap">
+      <h2>Stories</h2>
+      <p class="section-sub">
+        Climate feels different everywhere. These short stories keep it human: what people notice, what they feel, and what they do next.
+      </p>
+
+      <div class="story-grid" role="list">
+        <article class="story-card" id="story-1" role="listitem">
+          <span class="story-tag">Reflection</span>
+          <div class="story-title">“The Summer That Wouldn’t Cool Down”</div>
+          <div class="story-teaser">
+            I used to love late-afternoon walks. Now the heat sticks around longer and it changes how our whole neighborhood moves.
+          </div>
+          <a class="story-link" href="story-1.html" aria-label="Read story: The Summer That Wouldn’t Cool Down">Read more</a>
+        </article>
+
+        <article class="story-card" id="story-2" role="listitem">
+          <span class="story-tag">Community</span>
+          <div class="story-title">“One Street, One Cleanup”</div>
+          <div class="story-teaser">
+            We didn’t fix everything. But we made our block feel cared for, and that made people want to join the next time.
+          </div>
+          <a class="story-link" href="story-2.html" aria-label="Read story: One Street, One Cleanup">Read more</a>
+        </article>
+
+        <article class="story-card" id="story-3" role="listitem">
+          <span class="story-tag">Action</span>
+          <div class="story-title">“The Two-Minute Habit That Stuck”</div>
+          <div class="story-teaser">
+            Small changes felt silly, until I tracked them. Turns out “tiny” actions add up faster than you’d think.
+          </div>
+          <a class="story-link" href="story-3.html" aria-label="Read story: The Two-Minute Habit That Stuck">Read more</a>
+        </article>
+      </div>
+
+      <div class="stories-cta">
+        <button class="btn primary" type="button" id="openStoryModal3">Share Your Story</button>
+        <a class="btn" href="#impact">See This Week's Action</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" aria-label="About Zylo">
+    <div class="section-wrap">
+      <h2>About Us</h2>
+      <p class="section-sub">
+        Zylo is a student-led program focused on climate, action, and hope, built to make climate conversations feel safe, personal, and doable.
+      </p>
+
+      <div class="about-card">
+        <p class="section-sub" style="margin:0;">
+          <strong style="color:#fefce8;">Mission:</strong> Make climate action feel human through stories, small steps, and community progress.
+        </p>
+
+        <div class="about-points">
+          <div class="point">
+            <strong>What we do</strong>
+            <p>Share stories and observations that make climate change real, not overwhelming.</p>
+          </div>
+          <div class="point">
+            <strong>Who it’s for</strong>
+            <p>Students and communities who want a hopeful space to learn, reflect, and act.</p>
+          </div>
+          <div class="point">
+            <strong>Why it matters</strong>
+            <p>Because climate change is personal and action becomes easier when you don’t feel alone.</p>
+          </div>
+        </div>
+
+        <div class="stories-cta" style="margin-top:16px;">
+          <a class="btn primary" href="#stories">Start with a Story</a>
+          <button class="btn" type="button" id="openStoryModal4">Add Your Voice</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-wrap">
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="#home">Home</a>
+      <a href="#impact">Impact</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#stories">Stories</a>
+      <a href="#about">About Us</a>
+    </nav>
+
+    <div class="footer-brand">
+      <div class="footer-name">Zylo</div>
+      <div class="footer-tagline">Protecting Nature, Inspiring Change</div>
+    </div>
+  </div>
+  </div>
+</footer>
+
+<!-- SHARE STORY MODAL -->
+<div class="modal" id="storyModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Share your story">
+  <div class="modal-panel">
+    <div class="modal-head">
+      <h3>Share Your Story</h3>
+      <button class="icon-btn" type="button" id="closeStoryModal" aria-label="Close story form">✕</button>
+    </div>
+
+    <div class="modal-body">
+      <p class="section-sub" style="margin:0;">
+        Write a short story, reflection, or observation. Keep it real. Keep it kind. This is a safe space.
+      </p>
+
+      <form id="storyForm">
+        <div class="form-grid">
+          <div class="field">
+            <label for="storyName">Name (optional)</label>
+            <input id="storyName" name="name" placeholder="e.g., Alex" autocomplete="name" />
+          </div>
+
+          <div class="field">
+            <label for="storyTag">Type</label>
+            <input id="storyTag" name="tag" placeholder="Reflection / Community / Action" />
+          </div>
+        </div>
+
+        <div class="field" style="margin-top:12px;">
+          <label for="storyText">Your story</label>
+          <textarea id="storyText" name="story" required placeholder="What did you notice? How did it affect you? What’s one small action you tried (or want to try)?"></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn" type="button" id="cancelStory">Cancel</button>
+          <button class="btn primary" type="submit">Submit</button>
+        </div>
+
+        <p class="helper" id="formHelper">
+          <!-- PLACEHOLDER -->
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>
