@@ -926,10 +926,18 @@ footer {
 }
 
 @media (max-width: 900px) {
+  /* Let the hero grow so stacked hexes don't get clipped */
+  .hero {
+    height: auto;
+    min-height: unset;
+    overflow: visible;
+    padding-bottom: 40px;
+  }
+
   .hex { position: static; width: min(520px, 92%); margin: 12px auto 0; }
   .hex.left, .hex.right, .hex.bottom { left: auto; right: auto; top: auto; bottom: auto; transform: none; }
   .hero-content { padding: 140px 18px 40px; }
-  .scroll-cue { display: none; } /* prevent crowding */
+  .scroll-cue { display: none; }
 }
 
 @media (max-width: 980px) {
@@ -995,6 +1003,7 @@ footer {
 
   .form-grid { grid-template-columns: 1fr; }
 }
+
 
 
 
