@@ -950,6 +950,47 @@ footer {
   .about-points { grid-template-columns: 1fr; }
 }
 
+/* ===== MOBILE NAV: force links to render inside dropdown ===== */
+@media (max-width: 760px) {
+  header nav {
+    overflow: visible !important;
+  }
+
+  header nav ul {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    align-items: stretch !important;
+
+    width: 100% !important;
+  }
+
+  header nav li {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  header nav a {
+    width: 100% !important;
+    display: block !important;
+
+    color: #ffffff !important;              /* ensure visible */
+    text-decoration: none !important;
+
+    padding: 14px 14px !important;
+    border-radius: 12px !important;
+    background: rgba(255,255,255,0.08) !important;
+  }
+
+  header nav a::after { display: none !important; }
+}
+
+
 @media (max-width: 760px) {
   header { padding: 0 14px; }
   .brand { gap: 10px; min-width: unset; }
@@ -1002,6 +1043,12 @@ footer {
   .origin-chip { width: fit-content; }
 
   .form-grid { grid-template-columns: 1fr; }
+}
+
+.hex-inner,
+.hex-inner * {
+  color: #f9fafb !important;
+  -webkit-text-fill-color: #f9fafb !important; /* Safari/iOS */
 }
 
 
