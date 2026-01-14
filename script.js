@@ -1,11 +1,3 @@
-const navToggle = document.querySelector(".nav-toggle");
-const nav = document.querySelector("header nav");
-
-navToggle.addEventListener("click", () => {
-  const open = nav.classList.toggle("open");
-  navToggle.setAttribute("aria-expanded", open);
-});
-
 // =========================
   // Timeline: only one open at a time
   // =========================
@@ -33,6 +25,38 @@ navToggle.addEventListener("click", () => {
     document.querySelectorAll("nav a").forEach(a => {
       const match = a.getAttribute("href") === `#${id}`;
       a.classList.toggle("is-active", match);
+    });
+  }
+
+  // =========================
+  // Mobile nav toggle
+  // =========================
+  const navToggle = document.querySelector(".nav-toggle");
+  const primaryNav = document.getElementById("primary-nav");
+
+  function setNavOpen(open){
+    document.body.classList.toggle("nav-open", open);
+    if (navToggle) {
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      navToggle.textContent = open ? "✕" : "☰";
+    }
+  }
+
+  if (navToggle && primaryNav) {
+    navToggle.addEventListener("click", () => {
+      const isOpen = document.body.classList.contains("nav-open");
+      setNavOpen(!isOpen);
+    });
+
+    // close when clicking a nav link
+    primaryNav.querySelectorAll("a").forEach(a => {
+      a.addEventListener("click", () => setNavOpen(false));
+    });
+
+    // close on resize up to desktop
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 760) setNavOpen(false);
     });
   }
 
