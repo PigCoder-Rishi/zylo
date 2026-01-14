@@ -26,6 +26,47 @@
   --ring: 0 0 0 4px rgba(212, 230, 181, 0.22);
 }
 
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Mobile Nav */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  header nav {
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: var(--olive);
+    display: none;
+    flex-direction: column;
+    padding: 12px 0;
+  }
+
+  header nav.open {
+    display: flex;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  header nav a {
+    font-size: 18px;
+    padding: 12px 0;
+  }
+}
+
 /* =========================
    RESET & BASE
 ========================= */
@@ -864,3 +905,4 @@ footer {
 
   .form-grid { grid-template-columns: 1fr; }
 }
+
