@@ -1,3 +1,11 @@
+const navToggle = document.querySelector(".nav-toggle");
+const nav = document.querySelector("header nav");
+
+navToggle.addEventListener("click", () => {
+  const open = nav.classList.toggle("open");
+  navToggle.setAttribute("aria-expanded", open);
+});
+
 // =========================
   // Timeline: only one open at a time
   // =========================
