@@ -60,6 +60,36 @@
     });
   }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector("header nav");
+
+  if (toggle && nav) {
+    const setOpen = (open) => {
+      nav.classList.toggle("open", open);
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      toggle.textContent = open ? "✕" : "☰";
+    };
+
+    toggle.addEventListener("click", () => {
+      const isOpen = nav.classList.contains("open");
+      setOpen(!isOpen);
+    });
+
+    // Close menu when clicking any nav link
+    nav.addEventListener("click", (e) => {
+      if (e.target && e.target.matches("a")) setOpen(false);
+    });
+
+    // Close menu if resizing back to desktop
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 760) setOpen(false);
+    });
+  }
+});
+
+
   // =========================
   // Modal (Share Your Story)
   // =========================
