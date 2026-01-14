@@ -950,12 +950,52 @@ footer {
   .about-points { grid-template-columns: 1fr; }
 }
 
-/* ===== MOBILE NAV: force links to render inside dropdown ===== */
 @media (max-width: 760px) {
-  header nav {
-    overflow: visible !important;
+  /* ---- MOBILE MENU BUTTON (bigger + nicer) ---- */
+  .menu-toggle {
+    display: grid !important;
+    place-items: center !important;
+    border: 0 !important;
+    cursor: pointer !important;
+
+    height: 56px !important;
+    width: 56px !important;
+    border-radius: 16px !important;
+
+    font-size: 32px !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+
+    background: rgba(255,255,255,0.14) !important;
+    color: #fff !important;
+    box-shadow: 0 14px 32px rgba(0,0,0,0.35) !important;
   }
 
+  /* ---- NAV PANEL (dropdown) ---- */
+  header nav {
+    position: fixed !important;
+    top: var(--nav-height) !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+
+    display: none !important;         /* closed */
+    padding: 14px 14px 18px !important;
+
+    background: var(--olive) !important;
+    box-shadow: 0 18px 44px rgba(0,0,0,0.45) !important;
+
+    z-index: 9999 !important;
+
+    /* allow scrolling if long */
+    max-height: calc(100vh - var(--nav-height)) !important;
+    overflow: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  header nav.open { display: block !important; }
+
+  /* ---- FORCE UL/LI/A to actually lay out (this is the key) ---- */
   header nav ul {
     list-style: none !important;
     margin: 0 !important;
@@ -963,86 +1003,48 @@ footer {
 
     display: flex !important;
     flex-direction: column !important;
-    gap: 10px !important;
     align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
 
+    height: auto !important;          /* overrides your height: var(--nav-height) */
+    min-height: unset !important;
     width: 100% !important;
   }
 
   header nav li {
+    display: block !important;
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
   }
 
   header nav a {
-    width: 100% !important;
     display: block !important;
+    width: 100% !important;
 
-    color: #ffffff !important;              /* ensure visible */
-    text-decoration: none !important;
+    height: auto !important;          /* overrides your height: var(--nav-height) */
+    justify-content: flex-start !important;
 
     padding: 14px 14px !important;
-    border-radius: 12px !important;
+    border-radius: 14px !important;
+
+    color: #ffffff !important;        /* make sure text is visible */
     background: rgba(255,255,255,0.08) !important;
+
+    font-size: 18px !important;
+    text-decoration: none !important;
+    transform: none !important;
   }
 
   header nav a::after { display: none !important; }
 }
 
-
-@media (max-width: 760px) {
-  header { padding: 0 14px; }
-  .brand { gap: 10px; min-width: unset; }
-  .brand .logo-circle { display: none; }
-  .brand .pill { font-size: 22px; padding: 14px 18px; }
-
-  /* show the hamburger on mobile */
-  .menu-toggle { display: grid; place-items: center; }
-
-  /* turn nav into a dropdown panel */
-  header nav {
-    position: fixed;
-    top: var(--nav-height);
-    left: 0;
-    right: 0;
-    width: 100vw;
-
-    background: var(--olive);
-    box-shadow: 0 18px 40px rgba(0,0,0,0.35);
-
-    padding: 12px 14px 18px;
-    display: none;              /* closed by default */
-    z-index: 60;
-  }
-
-  header nav.open { display: block; }
-
-  header nav ul {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 8px;
-    height: auto;
-  }
-
-  header nav a {
-    display: block;
-    height: auto;
-    padding: 14px 12px;
-    font-size: 18px;            /* bigger, readable */
-    border-radius: 12px;
-    background: rgba(255,255,255,0.06);
-  }
-
-  header nav a::after { display: none; } /* prevent underline layout weirdness */
-  header nav a:hover { transform: none; }
-  header nav a:active { background: rgba(255,255,255,0.12); }
-
-  .origin-item summary { grid-template-columns: 1fr; gap: 6px; }
-  .origin-chip { width: fit-content; }
-
-  .form-grid { grid-template-columns: 1fr; }
+/* ---- HEX TEXT: force white on all devices (not just mobile) ---- */
+.hex-inner,
+.hex-inner * {
+  color: #f9fafb !important;
+  -webkit-text-fill-color: #f9fafb !important;
 }
 
 .hex-inner,
@@ -1050,6 +1052,7 @@ footer {
   color: #f9fafb !important;
   -webkit-text-fill-color: #f9fafb !important; /* Safari/iOS */
 }
+
 
 
 
